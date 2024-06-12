@@ -10,12 +10,14 @@ import sys
 is_python_2 = sys.version_info < (3, 0)
 
 here = path.abspath(path.dirname(__file__))
-root = path.join(here, 'ccxt', 'python')
+root = path.dirname(here)
 
 readme = path.join(here, 'README.md')
 package_json = path.join(here, 'package.json')
 
 # a workaround when installing locally from git repository with pip install -e .
+if not path.isfile(readme):
+    readme = path.join(root, 'README.md')
 if not path.isfile(package_json):
     package_json = path.join(root, 'package.json')
 
