@@ -78,7 +78,7 @@ setup(
     ],
 
     keywords=package['keywords'],
-    packages=['ccxt'],
+    packages=find_packages(exclude=['ccxt.async_support*'] if is_python_2 else []),
     package_dir={
         'python/ccxt': '.',
     },
