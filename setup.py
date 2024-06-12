@@ -9,8 +9,8 @@ import sys
 
 is_python_2 = sys.version_info < (3, 0)
 
-here = path.abspath(path.join(path.dirname(__file__), 'ccxt', 'python'))  # Adjust here to point to ccxt/python
-root = path.dirname(here)
+here = path.abspath(path.dirname(__file__))
+root = path.join(here, 'ccxt', 'python')
 
 readme = path.join(here, 'README.md')
 package_json = path.join(here, 'package.json')
